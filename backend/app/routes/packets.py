@@ -5,14 +5,20 @@ from app.services.firestore_service import FirestoreService
 from app.services.packet_service import PacketGeneratorService
 
 router = APIRouter(prefix="/packets", tags=["packets"])
-firestore_service = FirestoreService()
-packet_service = PacketGeneratorService(firestore_service)
+
+
+def get_services():
+    """Get service instances"""
+    firestore_service = FirestoreService()
+    packet_service = PacketGeneratorService(firestore_service)
+    return firestore_service, packet_service
 
 
 @router.post("/generate")
 async def generate_packet(request: PacketRequest):
     """Generate a grant application packet"""
     try:
+        _, packet_service = get_services()
         filepath = await packet_service.generate_packet(
             profile_id=request.profile_id,
             grant_ids=request.grant_ids,
