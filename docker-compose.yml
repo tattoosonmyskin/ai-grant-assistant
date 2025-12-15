@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - FIRESTORE_EMULATOR_HOST=firestore:8080
+    volumes:
+      - ./backend:/app
+      - ./data:/app/data
+    depends_on:
+      - firestore
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.next
+    depends_on:
+      - backend
+
+  firestore:
+    image: google/cloud-sdk:emulators
+    ports:
+      - "8080:8080"
+    command: gcloud emulators firestore start --host-port=0.0.0.0:8080

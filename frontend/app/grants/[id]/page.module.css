@@ -1,0 +1,209 @@
+.container {
+  min-height: 100vh;
+  background: #f9fafb;
+  padding: 2rem;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+}
+
+.error {
+  color: #dc2626;
+}
+
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.backButton {
+  background: white;
+  border: 2px solid #e5e7eb;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.backButton:hover {
+  background: #f3f4f6;
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.grantCard {
+  background: white;
+  border-radius: 12px;
+  padding: 3rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  gap: 2rem;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: var(--text-color);
+  flex: 1;
+}
+
+.amount {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 2rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.organization,
+.deadline {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #4b5563;
+}
+
+.organization strong,
+.deadline strong {
+  color: var(--text-color);
+}
+
+.section {
+  margin: 2rem 0;
+  padding-top: 2rem;
+  border-top: 2px solid #f3f4f6;
+}
+
+.section h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.8rem;
+  color: var(--text-color);
+}
+
+.section p {
+  margin: 0;
+  line-height: 1.8;
+  color: #4b5563;
+  font-size: 1.1rem;
+}
+
+.requirements {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.requirement {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.requirement strong {
+  color: var(--text-color);
+  font-size: 1.1rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background: #e0e7ff;
+  color: #4338ca;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.applyLink {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.applyLink:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.actions {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid #f3f4f6;
+}
+
+.btnPrimary,
+.btnSecondary {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btnSecondary {
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+}
+
+.btnSecondary:hover {
+  background: #f3f4f6;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .grantCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .amount {
+    width: 100%;
+    text-align: center;
+  }
+}
